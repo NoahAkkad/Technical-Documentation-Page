@@ -11,88 +11,443 @@
 
 <body>
   <nav>
-    <header>The page</header>
+    <header>C# Programming Yellow Book</header>
     <ul>
-      <li><a href="#section1">section1</a></li>
-      <li><a href="#section2">section2</a></li>
-      <li><a href="#section3">section3</a></li>
-      <li><a href="#section4">section4</a></li>
-      <li><a href="#section5">section5</a></li>
-      <li><a href="#section6">section6</a></li>
+      <li><a href="#section1">Introduction</a></li>
+      <li><a href="#section2">Computers and Programs</a></li>
+      <li><a href="#section3">Simple Data Processing</a></li>
+      <li><a href="#section4">Creating Programs</a></li>
+      <li><a href="#section5">Creating Solutions</a></li>
+      <li><a href="#section6">Advanced Programming</a></li>
     </ul>
 
   </nav>
   <main>
     <section id="section1">
-      <header>section1</header>
+      <header>Welcome</header>
       <article>
-        <p>All clip contents section1</p>
-        <p>All clip contents section1</p>
-        <ul>
-          <li>contents</li>
-          <li>contents</li>
-          <li>contents</li>
-          <li>contents</li>
-        </ul>
-        <p>All clip contents section1</p>
-        <p>All clip contents section1</p>
+        <p>Welcome to the Wonderful World of Rob Miles™. This is a world of bad jokes, puns,
+          and programming. In this book I'm going to give you a smattering of the C#
+          programming language. If you have programmed before I'd be grateful if you'd still
+          read the text. It is worth it just for the jokes and you may actually learn something.
+          If you have not programmed before, do not worry. Programming is not rocket science
+          it is, well, programming. The bad news about learning to program is that you get hit
+          with a lot of ideas and concepts at around the same time when you start, and this can be
+          confusing. The keys to learning programming are:
+          Practice – do a lot of programming and force yourself to think about things from a
+          problem solving point of view
+          Study – look at programs written by other people. You can learn a lot from studying
+          code which other folk have created. Figuring out how somebody else did the job is a
+          great starting point for your solution. And remember that in many cases there is no best
+          solution, just ones which are better in a particular context, i.e. the fastest, the smallest,
+          the easiest to use etc.
+          Persistence – writing programs is hard work. And you have to work hard at it. The
+          principle reason why most folks don't make it as programmers is that they give up. Not
+          because they are stupid. However, don't get too persistent. If you haven't solved a
+          programming problem in 30 minutes you should call time out and seek help. Or at least
+          walk away from the problem and come back to it. Staying up all night trying to sort out
+          a problem is not a good plan. It just makes you all irritable in the morning. We will
+          cover what to do when it all goes wrong later in section 5.9.</p><br>
+        <hr>
+        <header>Reading the notes</header>
+        <p>These notes are written to be read straight through, and then referred to afterwards.
+          They contain a number of Programming Points. These are based on real programming
+          experience and are to be taken seriously. There are also bits written in a Posh Font.
+          These are really important, should be learnt by heart and probably set to music.
+          If you have any comments on how the notes can be made even better (although I of
+          course consider this highly unlikely) then feel free to get in touch.
+          Above all, enjoy programming.
+          Rob Miles</p><br>
+        <hr>
+        <header>Getting a copy of the notes and code samples</header>
+        <p>Printed copies of these notes are made freely available to Computer Science students at
+          the University of Hull. The website for the book is at <a
+            href="http://www.csharpcourse.com">http://www.csharpcourse.com</a>
+          where you can also find the PowerPoint slide decks and laboratory exercises for a C#
+          course based on this text. You can also find the C# code samples here too.
+          If you want to make a single printed copy of the text for private use, that's fine by me,
+          but if you intend to print larger numbers I'd appreciate you getting in touch first.
+          You can obtain a Kindle eBook version from Amazon.</p><br>
+        <hr>
       </article>
     </section>
     <section id="section2">
-      <header>section2</header>
+      <header>Computers and Programs</header>
       <article>
-        <p>All clip contents section2</p>
-        <p>All clip contents section2</p>
-        <p>All clip contents section2</p>
-        <p>All clip contents section2</p>
+        <p>In this chapter you are going to find out what a computer is and get an understanding of
+          the way that a computer program tells the computer what to do. You will discover what
+          you should do when starting to write a program, to ensure that you achieve a “happy
+          ending” for you and your customer. Finally, you will take a look at programming in
+          general and the C# language in particular.</p><br>
+        <hr>
+        <h4>1.1 Computers</h4>
+        <p>Before we consider programming, we are going to consider computers. This is an
+          important thing to do, because it sets the context in which all the issues of
+          programming itself are placed.</p><br>
+        <hr>
+        <h4>1.1.1 An Introduction to Computers</h4>
+        <p>One way of describing a computer is as an electric box which hums. This, while
+          technically correct, can lead to significant amounts of confusion, particularly
+          amongst those who then try to program a fridge. A better way is to describe it as:
+          A device which processes information according to
+          instructions it has been given.
+          This general definition rules out fridges but is not exhaustive. However, for our
+          purposes it will do. The instructions you give to the computer are often called a
+          program. The business of using a computer is often called programming. This is not
+          what most people do with computers. Most people do not write programs. They use
+          programs written by other people. We must therefore make a distinction between users
+          and programmers. A user has a job which he or she finds easier to do on a computer
+          running the appropriate program. A programmer has a masochistic desire to tinker with
+          the innards of the machine. One of the golden rules is that you never write your own
+          program if there is already one available, i.e. a keen desire to process words with a
+          computer should not result in you writing a word processor!
+          However, because you will often want to do things with computers which have not
+          been done before, and further because there are people willing to pay you to do it, we
+          are going to learn how to program as well as use a computer.
+          Before we can look at the fun packed business of programming though it is worth
+          looking at some computer terminology:</p><br>
+        <hr>
+        <h4>1.1.2 Hardware and Software</h4>
+        <p>If you ever buy a computer, you are not just getting a box which hums. The box, to be
+          useful, must also have sufficient built-in intelligence to understand simple commands
+          to do things. At this point we must draw a distinction between the software of a
+          computer system and the hardware.
+          Hardware is the physical side of the system. Essentially if you can kick it, and it stops
+          working when immersed in a bucket of water, it is hardware. Hardware is the
+          impressive pile of lights and switches in the corner that the salesman sold you.
+          Software is what makes the machine tick. If a computer has a soul, it keeps it in its
+          software. Software uses the physical ability of the hardware, which can run programs,
+          to do something useful. It is called software because it has no physical existence and it is comparatively
+          easy to change. Software is the voice which says "Computer Running"
+          in a Star Trek film. All computers are sold with some software. Without it they would just be a novel
+          and highly expensive heating system. The software which comes with a computer is
+          often called its Operating System. The Operating System makes the machine usable.
+          It looks after all the information held on the computer and provides lots of
+          commands to allow you to manage things. It also lets you run programs, ones you
+          have written and ones from other people. You will have to learn to talk to an
+          operating system so that you can create your C# programs and get them to go.</p><br>
+        <hr>
+        <h4>1.1.3 Data and Information</h4>
+        <p>People use the words data and information interchangeably. They seem to think that
+          one means the other. I regard data and information as two different things:
+          Data is the collection of ons and offs which computers store and manipulate.
+          Information is the interpretation of the data by people to mean something. Strictly
+          speaking computers process data, humans work on information. As an example, the
+          computer could hold the following bit pattern in memory somewhere:</p><br>
+        <p>The transition from data to information is usually made when the human reads the
+          output. So why am I being so pedantic? (pedantic means being fussy about something
+          being exactly right) Because it is vital to remember that a computer does not "know"
+          what the data it is processing actually means. As far as the computer is concerned data
+          is just patterns of bits, it is the user who gives meaning to these patterns. Remember
+          this when you get a bank statement which says that you have £8,388,608 in your
+          account!</p>
+        <p><strong>Data Processing</strong><br>
+          Computers are data processors. Information is fed into them; they do something with it,
+          and then generate further information. A computer program tells the computer what to
+          do with the information coming in. A computer works on data in the same way that a
+          sausage machine works on meat, something is put in one end, some processing is
+          performed, and something comes out of the other end:</p>
+        <p>A program is unaware of the data it is processing in the same way that a sausage
+          machine is unaware of what meat is. Put a bicycle into a sausage machine and it will
+          try to make sausages out of it. Put invalid data into a computer and it will do equally
+          useless things. It is only us people who actually give meaning to the data (see above).
+          As far as the computer is concerned data is just stuff coming in which has to be
+          manipulated in some way.
+          A computer program is just a sequence of instructions which tell a computer what to do
+          with the data coming in and what form the data sent out will have.</p>
+        <p>Note that the data processing side of computers, which you might think is entirely
+          reading and writing numbers, is much more than that, examples of typical data
+          processing applications are:
+          Digital Watch: A micro-computer in your watch is taking pulses from a crystal and
+          requests from buttons, processing this data and producing a display which tells you the
+          time.
+          Car: A micro-computer in the engine is taking information from sensors telling it the
+          current engine speed, road speed, oxygen content of the air, setting of the accelerator
+          etc and producing voltages out which control the setting of the carburettor, timing of
+          the spark etc, to optimise the performance of the engine.
+          CD Player: A computer is taking a signal from the disk and converting it into the
+          sound that you want to hear. At the same time, it is keeping the laser head precisely
+          positioned and also monitoring all the buttons in case you want to select another part of
+          the disk.
+          Games Console: A computer is taking instructions from the controllers and using
+          them to manage the artificial world that it is creating for the person playing the game.
+          Note that some of these data processing applications are merely applying technology to
+          existing devices to improve the way they work. However, the CD player and games
+          console could not be made to work without built-in data processing ability.
+          Most reasonably complex devices contain data processing components to optimise
+          their performance and some exist only because we can build in intelligence. It is into
+          this world that we, as software writers are moving. It is important to think of the
+          business of data processing as much more than working out the company payroll,
+          reading in numbers and printing out results. These are the traditional uses of
+          computers.
+          Note that this "raises the
+          stakes" in that the
+          consequences of software
+          failing could be very
+          damaging.
+          As software engineers it is inevitable that a great deal of our time will be spent fitting
+          data processing components into other devices to drive them. You will not press a
+          switch to make something work, you will press a switch to tell a computer to make it
+          work. These embedded systems will make computer users of everybody, and we will
+          have to make sure that they are not even aware that there is a computer in there!
+          You should also remember that seemingly innocuous programs can have life
+          threatening possibilities. For example, a doctor may use a spread sheet to calculate
+          doses of drugs for patients. In this case a defect in the program could result in illness or
+          even death (note that I don't think that doctors actually do this – but you never know..)</p>
+        <hr>
       </article>
     </section>
     <section id="section3">
-      <header>section3</header>
+      <header>Simple Data Processing</header>
       <article>
-        <p>All clip contents section3</p>
-        <p>All clip contents section3</p>
-        <p>All clip contents section3</p>
-        <p>All clip contents section3</p>
+        <p>In this chapter we are going to create a genuinely useful program (particularly if you
+          are in the double glazing business). We will start by creating a very simple solution and
+          investigating the C# statements that perform basic data processing. Then we will use
+          additional features of the C# language to improve the quality of the solution we are
+          producing.</p>
+        <h4>2.1 A First C# Program</h4>
+        <p>The first program that we are going to look at will read in the width and height of a
+          window and then print out the amount of wood and glass required to make a window
+          that will fit in a hole of that size. This is the problem we set out to solve as described in
+          section1.2.2</p><br>
+        <hr>
+        <h4>2.1.1 The Program Example</h4>
+        <p>Perhaps the best way to start looking at C# is to jump straight in with our first ever C#
+          program. Here it is: </p><br>
+        <hr>
+        <h4>using System;</h4>
+        <p>This is an instruction to the C# compiler to tell it that we want to use things from the
+          System namespace. A namespace is a place where particular names have meaning.
+          We have namespaces in our conversations too, if I am using the "Football"
+          namespace and I say “That team is really on fire” I'm saying something good. If I
+          am using the "Firefighter" namespace I'm saying something less good.
+          In the case of C# the System namespace is where lots of useful things are described.
+          One of these useful things provided with C# is the Console class which will let me
+          write things which will appear on the screen in front of the user. If I want to just refer
+          to this as Console I have to tell the compiler I'm using the System namespace. This
+          means that if I refer to something by a particular name the compiler will look in
+          System to see if there is anything matching that name. We will use other namespaces
+          later on.</p><br>
+        <hr>
+        <h4>class GlazerCalc</h4>
+        <p>A C# program is made up of one or more classes. A class is a container which holds
+          data and program code to do a particular job. In the case of our double glazing
+          calculator the class just contains a single method which will work out our wood
+          lengths and glass area, but a class can contain much more than that if it needs to.
+          You need to invent an identifier for every class that you create. I've called ours
+          GlazerCalc since this reflects what it does. For now, don't worry too much about
+          classes; just make sure that you pick sensible names for the classes that you create.
+          Oh, and one other thing. There is a convention that the name of the file which contains
+          a particular class should match the class itself, in other words the program above
+          should be held in a file called GlazerCalc.cs.</p><br>
+        <hr>
+        <h4>static</h4>
+        <p>This keyword makes sure that the method which follows is always present, i.e. the
+          word static in this context means "is part of the enclosing class and is always
+          here". When we get to consider objects we will find that this little keyword has all
+          kinds of interesting ramifications. But for now I'd be grateful if you'd just make sure
+          that you put it here in order to make your programs work properly.</p><br>
+        <hr>
       </article>
     </section>
     <section id="section4">
-      <header>section4</header>
+      <header>Creating Programs</header>
       <article>
-        <p>All clip contents section4</p>
-        <p>All clip contents section4</p>
-        <ul>
-          <li>contents</li>
-          <li>contents</li>
-          <li>contents</li>
-          <li>contents</li>
-        </ul>
-        <p>All clip contents section4</p>
-        <p>All clip contents section4</p>
+        <p>In this chapter we will build on our programming abilities to make programs that are
+          broken down into manageable chunks and find out how a program can store and
+          manipulate large amounts of data using arrays.</p>
+        <h4>3.1 Methods</h4>
+        <p>We have already come across the methods Main, WriteLine and ReadLine. Main is
+          the method we write which is where our program starts. WriteLine and ReadLine
+          were provided by the creators of C# to give us a way of displaying text and reading
+          information from the user.
+          This is what methods are all about. Your programs will contain methods that you create
+          to solve parts of the problem and they will also use methods that have been provided
+          by other people. In this section we are going to consider why methods are useful and
+          how you can create your own.</p><br>
+        <hr>
+        <h4>3.1.1 The Need for Methods</h4>
+        <p>In the glazing program above we spend a lot of time checking the values of inputs and
+          making sure that they are in certain ranges. We have exactly the same piece of code to
+          check widths and heights. If we added a third thing to read, for example frame
+          thickness, we would have to copy the code a third time. This is not very efficient; it
+          makes the program bigger and harder to write. What we would like to do is write the
+          checking code once and then use it at each point in the program. To do this you need to
+          define a method to do the work for you.
+          Method and Laziness
+          We have already established that a good programmer is creatively lazy. One of the
+          tenets of this is that a programmer will try to do a given job once and once only.
+          Up until now all our programs have been in a single method. The method is the block
+          of code which follows the main part in our program. However, C# lets us create other
+          methods which are used when our program runs. Methods give us two new weapons:
+          • We can use methods to let us re-use a piece of code which we have written.
+          • We can also use methods to break down a large task into a number of smaller
+          ones.
+          We will need both of these when we start to write larger programs. Again, as with lots
+          of features of the C# language, methods don't actually make things possible, but they
+          do help with the organisation of our programs.
+          Essentially you take a block of code and give it a name. Then you can refer to this
+          block of code to do something for you. As a silly example:</p><br>
+        <hr>
+        <h4>3.1.2 Parameters</h4>
+        <p>At this point methods are useful because they let us use the same block of statements at
+          many points in the program. However, they become more useful if we allow them to
+          have parameters.
+          A parameter is a means of passing a value into a method call. The method is given the
+          data to work on. As an example, consider the code below:</p><br>
+        <hr>
       </article>
     </section>
     <section id="section5">
-      <header>section5</header>
+      <header>Creating Solutions</header>
       <article>
-        <p>All clip contents section5</p>
-        <p>All clip contents section5</p>
-        <p>All clip contents section5</p>
-        <p>All clip contents section5</p>
+        <h4>4.1 Our Case Study: Friendly Bank</h4>
+        <p>The bulk of this section is based on a case study which will allow you to see the
+          features of C# in a strong context. You are taking the role of a programmer who will
+          be using the language to create a solution for a customer.
+          The program we are making is for a bank, the "United Friendly and Really Nice Bank
+          of Lovely People ™", otherwise known as the Friendly Bank. We will be creating the
+          entire bank application using C# and will be exploring the features of C# that make this
+          easy.
+          It is unlikely that you will get to actually implement an entire banking system during
+          your professional career as a programmer (although it might be quite fun – and
+          probably rather lucrative). However, from a programming point of view it is an
+          interesting problem and as we approach it we will uncover lots of techniques which
+          will be useful in other programs that we might write.</p><br>
+        <hr>
+        <h4>4.1.1 Bank System Scope</h4>
+        <p>The scope of a system is a description of the things that the system is going to do. This
+          is also, by implication, a statement of what the system will not do. This is equally as
+          important, as a customer will not usually have a clear idea of what you are doing and
+          may well expect you to deliver things that you have no intention of providing. By
+          setting out the scope at the beginning you can make sure that there are no unpleasant
+          surprises later on.
+          At the moment we are simply concerned with managing the account information in the
+          bank. The bank manager has told us that the bank stores information about each
+          customer. This information includes their name, address, account number, balance and
+          overdraft value. Other data items might be added later.
+          There are many thousands of customers and the manager has also told us that there are
+          also a number of different types of accounts (and that new types of account are
+          invented from time to time).
+          The system must also generate warning letters and statements as required.</p><br>
+        <hr>
+        <h4>4.2 Enumerated Types</h4>
+        <p>These sound really posh. If anyone asks you what you learnt today you can say "I
+          learnt how to use enumerated types" and they will be really impressed. Of course if
+          they know about programming they'll just say "Oh, you mean you’ve numbered some
+          states".</p><br>
+        <hr>
+        <h4>4.2.1 Enumeration and states</h4>
+        <p>Enumerated sounds posh. But if you think of "enumerated" as just meaning
+          "numbered" things get a bit easier. To understand what we are doing here we need to
+          consider the problem which these types are intended to solve.
+          We know that if we want to hold an integer value we can use an int type. If we want
+          to hold something which is either true or false we can use a bool. However,
+          sometimes we want to hold a range of particular values or states.</p>
+        <ul>
+          <li>Empty sea</li>
+          <li>Attacked</li>
+          <li>Battleship</li>
+          <li>Cruiser</li>
+          <li>Submarine</li>
+          <li>Rowing boat</li>
+        </ul>
+        <p>If you think about it, I am sort of assembling more metadata here, in that I have
+          decided that I need to keep track of the sea and then I have worked out exactly what I
+          can put in it. I could do something with numbers if I like:</p>
+        <ul>
+          <li>Empty sea</li>
+          <li>Attacked</li>
+          <li>Battleship</li>
+          <li>Cruiser</li>
+          <li>Submarine</li>
+          <li>Rowing boat</li>
+        </ul>
+        <hr>
       </article>
     </section>
     <section id="section6">
-      <header>section6</header>
+      <header>Advanced Programming</header>
       <article>
-        <p>All clip contents section6</p>
-        <p>All clip contents section6</p>
-        <p>All clip contents section6</p>
-        <ul>
-          <li>contents</li>
-          <li>contents</li>
-          <li>contents</li>
-          <li>contents</li>
-        </ul>
-        <p>All clip contents section6</p>
+        <h4>5.1 Generics and Collections</h4>
+        <p>Generics are very useful. This statement probably doesn't tell you much about them or
+          what they do, but it does indicate that they are very useful. They sound a bit scary;
+          telling people you learned about "generics" probably conjures up images of people with
+          white coats and test tubes, at least amongst those who can't spell very well. But I
+          digress. I think the root of Generics is probably "general", in that the idea of them is
+          that you specify a general purpose operation and then apply it in different contexts in a
+          way appropriate to each of them. If this sounds a bit like abstraction and inheritance
+          you are sort of on the right track. If it doesn't, then it might be worth re-reading those
+          bits of the book until they make sense.
+          Perhaps the best way to talk about generics is to see how they can help us solve a
+          problem for the bank. We have just seen that we can store Account references in an
+          Array. But we know that when an array is created the programmer must specify exactly
+          how many elements it contains. This leads to a "straw that breaks the camel's back"
+          problem, where adding the 10,001st customer to the bank is not actually a cause for
+          celebration, because the array size was set at 10,000 and our program crashes.
+          One way to solve this problem is to use a really big array, but we aren't that keen on
+          that because it means that for smaller banks the program might be wasting a lot of
+          memory. Fortunately the C# libraries provide a number of solutions, starting with the
+          simple ArrayList.</p><br>
+        <hr>
+        <h4>5.1.1 The ArrayList class</h4>
+        <p>The ArrayList is a cousin of the HashTable we have just seen, in that it lives in the
+          same System.Collections namespace. It lets us create something very useful, an
+          array that can grow in size. We can always add new elements to the ArrayList, and
+          some very clever code in the library makes sure that this works.
+          Creating an ArrayList
+          It is very easy to create an ArrayList:
+          ArrayList store = new ArrayList();
+          Note that you don't have to set the size of the ArrayList, although there are
+          overloaded constructors that let you give this information and help the library code
+          along a bit:
+          ArrayList storeFifty = new ArrayList(50);
+          The ArrayList called storeFifty is initially able to store 50 references, but it can
+          hold more or less as required.
+          Adding Items to an ArrayList
+          Adding items to an ArrayList is also very easy. The class provides an Add method:
+          Account robsAccount = new Account ();
+          store.Add(robsAccount);
+          It is important to remember what is going on here. We are not putting an Account into
+          the arraylist; we are instead making one element of the arraylist refer to that account. In
+          this respect the word Add can be a bit misleading, in that what it actually does is add a
+          reference, not the thing itself.
+          Remember that it would be perfectly possible to have robsAccount in multiple
+          arraylists, just like your name can appear on multiple lists in the real world. It might be</p><br>
+        <hr>
+        <h4>5.1.2 The List class</h4>
+        <p>The List class gives you everything that an arraylist gives you, with the advantage
+          that it is also typesafe. It is newer than the ArrayList class, being based on the
+          generic features provided by a more recent version of the C# language. To understand
+          how it works you have to understand a bit of generics.
+          Generics and Behaviours
+          If you think about it, the fundamental behaviours of arrays are always the same.
+          Whether you have an int, string, float or Account array the job that it does is
+          exactly the same. It holds a bunch of things in one place, and provides you with some
+          means to work with them. The abilities an array gives you with an array of integers are
+          exactly the same as those you have with an array of Accounts. And because each
+          array is declared as holding values of a particular type, C# can make sure that an array
+          always holds the appropriate type of values. The way that the system works, there is
+          just no way that you can take an Account reference and place it in an array of integers.
+          This is all to the good, but the ArrayList breaks things a bit.
+          The ArrayList was added afterwards, and because it is not quite as much a part of
+          the language as an array is, it has to use a compromise to allow it to hold references to
+          any kind of item in a program. It does this by using references to objects, but this can
+          lead to programs which are dangerous, in that there is nothing to stop references of any
+          type being added to an arraylist.
+          If you give me an array of Accounts I can be absolutely sure that everything in the
+          array is an account. However, if you give me an ArrayList there is no way I can be
+          sure that accounts are all it contains. It could contain a whole bunch of KitchenSink
+          references for all I know. And I only really find out when I start trying to process
+          elements as Accounts and my program starts to go wrong.
+          One way to solve this problem would have been to find a way of making the
+          ArrayList strongly typed, so that it becomes as much a part of C# as the array is.
+          However, that is not what the designers of C# did. Instead they introduced a new
+          language feature, generics.
+          Generics let me write code that deal with objects as "things of a particular type". It
+          doesn't matter what the thing I'm dealing with is, we can sort that out when we actually
+          want to work with something.</p><br>
+        <hr>
       </article>
     </section>
   </main>
